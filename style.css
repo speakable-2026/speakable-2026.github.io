@@ -25,7 +25,7 @@ header {
 header::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 600px;
@@ -251,11 +251,16 @@ li {
   justify-content: center;
   color: #9ca3af;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .organizer-photo-placeholder img {
-  width: 120px;
-  height: 120px;
+  width: 120px !important;
+  height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
+  min-width: 120px !important;
+  min-height: 120px !important;
   border-radius: 50%;
   object-fit: cover;
   display: block;
