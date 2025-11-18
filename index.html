@@ -47,42 +47,15 @@
       </div>
     </section>
 
-    <div class="quick-links">
-      <a href="about.html" class="quick-link-card">
-        <h3>📖 About</h3>
-        <p>Learn why this workshop matters and what SPEAKABLE brings to the community</p>
-      </a>
-      
-      <a href="topics.html" class="quick-link-card">
-        <h3>🎯 Topics</h3>
-        <p>Explore the research areas we're interested in and diversity initiatives</p>
-      </a>
-      
-      <a href="dates.html" class="quick-link-card">
-        <h3>📅 Important Dates</h3>
-        <p>Check submission deadlines and workshop schedule</p>
-      </a>
-      
-      <a href="speakers.html" class="quick-link-card">
-        <h3>🎤 Speakers</h3>
-        <p>Meet our confirmed invited speakers</p>
-      </a>
-      
-      <a href="organizers.html" class="quick-link-card">
-        <h3>👥 Organizers</h3>
-        <p>Get to know the organizing committee</p>
-      </a>
-      
-      <a href="committee.html" class="quick-link-card">
-        <h3>🔬 Program Committee</h3>
-        <p>View our expert reviewers from around the world</p>
-      </a>
-      
-      <a href="submission.html" class="quick-link-card">
-        <h3>📝 Submission</h3>
-        <p>Guidelines for paper format and submission process</p>
-      </a>
-    </div>
+    <section id="countdown-section">
+      <h2>Workshop Countdown</h2>
+      <div id="countdown" style="text-align: center; font-size: 2rem; color: #0891b2; font-weight: 600; margin: 2rem 0;">
+        <div id="countdown-display">Workshop date to be announced</div>
+      </div>
+      <p style="text-align: center; color: #6b7280; font-size: 0.95rem;">
+        Check the <a href="dates.html">Important Dates</a> page for submission deadlines and workshop schedule.
+      </p>
+    </section>
 
     <section>
       <h2>Three Core Strands</h2>
@@ -106,6 +79,38 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Countdown timer
+    // Set your workshop date here (format: YYYY-MM-DD)
+    const workshopDate = null; // Change to actual date when known, e.g., new Date('2026-05-20')
+    
+    if (workshopDate) {
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = workshopDate - now;
+        
+        if (distance < 0) {
+          document.getElementById('countdown-display').innerHTML = "Workshop is happening now!";
+          return;
+        }
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById('countdown-display').innerHTML = 
+          `<div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div><span style="font-size: 3rem; display: block;">${days}</span><span style="font-size: 1rem; color: #6b7280;">Days</span></div>
+            <div><span style="font-size: 3rem; display: block;">${hours}</span><span style="font-size: 1rem; color: #6b7280;">Hours</span></div>
+            <div><span style="font-size: 3rem; display: block;">${minutes}</span><span style="font-size: 1rem; color: #6b7280;">Minutes</span></div>
+            <div><span style="font-size: 3rem; display: block;">${seconds}</span><span style="font-size: 1rem; color: #6b7280;">Seconds</span></div>
+          </div>`;
+      }
+      
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
   </script>
 </body>
 </html>
