@@ -23,17 +23,25 @@ header {
 /* Workshop logo */
 .logo-link {
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .workshop-logo {
-  max-width: 150px;
+  max-width: 280px;
   height: auto;
   transition: transform 0.3s;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .workshop-logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+/* Responsive logo sizing */
+@media (max-width: 768px) {
+  .workshop-logo {
+    max-width: 200px;
+  }
 }
 
 header h1 {
