@@ -20,6 +20,22 @@ header {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+/* Workshop logo */
+.logo-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.workshop-logo {
+  max-width: 150px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.workshop-logo:hover {
+  transform: scale(1.05);
+}
+
 header h1 {
   margin: 0;
   font-size: 3rem;
