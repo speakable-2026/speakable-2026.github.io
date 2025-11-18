@@ -403,6 +403,36 @@ li {
   color: #6b7280;
 }
 
+/* Contact section with logo background */
+#contact-section {
+  position: relative;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 2px solid #0891b2;
+  overflow: hidden;
+}
+
+#contact-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -50px;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  background-image: url('workshoplogo-removebg-preview.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#contact-section > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* Links */
 a {
   color: #0891b2;
