@@ -163,36 +163,81 @@ li {
   font-weight: 500;
 }
 
-/* Organizer cards */
-.organizer {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #e5e7eb;
+/* Organizer cards - Grid Layout */
+.organizers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.organizer:last-child {
-  border-bottom: none;
+.organizer-card {
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.organizer-card:hover {
+  border-color: #0891b2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.organizer-photo-placeholder {
+  width: 120px;
+  height: 120px;
+  background: #e5e7eb;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
 }
 
 .organizer-name {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: #1e3a8a;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.organizer-affiliation {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
 }
 
 .organizer-email {
   color: #0891b2;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-decoration: none;
+  display: block;
   margin-bottom: 0.5rem;
-  display: inline-block;
 }
 
 .organizer-email:hover {
   text-decoration: underline;
 }
 
+.organizer-links {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.organizer-links a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.organizer-links a:hover {
+  color: #0891b2;
+  text-decoration: underline;
+}
+
+/* Old organizer bio style (kept for backward compatibility) */
 .organizer-bio {
   margin-top: 0.5rem;
   color: #4b5563;
