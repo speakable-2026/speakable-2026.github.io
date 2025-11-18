@@ -44,28 +44,28 @@ header > * {
   z-index: 1;
 }
 
-/* Workshop logo - larger and more prominent */
+/* Workshop logo - LARGE and prominent as main header */
 .logo-link {
   display: inline-block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .workshop-logo {
-  max-width: 500px;
+  max-width: 700px;
   height: auto;
   transition: all 0.3s ease;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
 }
 
 .workshop-logo:hover {
-  transform: scale(1.05) translateY(-5px);
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+  transform: scale(1.03) translateY(-3px);
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
 }
 
 /* Responsive logo sizing */
 @media (max-width: 768px) {
   .workshop-logo {
-    max-width: 300px;
+    max-width: 350px;
   }
   
   header::before {
