@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Topics – SPEAKABLE 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Topics of Interest for SPEAKABLE 2026" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1><a href="index.html" style="color: inherit; text-decoration: none;">SPEAKABLE 2026</a></h1>
+    <p class="subtitle">Speech Language Models in Low-Resource Settings:<br/>Performance, Evaluation, and Bias Analysis</p>
+    <p class="meta"><strong>Co-located with LREC 2026</strong> • Full-Day Workshop</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="topics.html" class="active">Topics</a>
+      <a href="dates.html">Dates</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="organizers.html">Organizers</a>
+      <a href="committee.html">Program Committee</a>
+      <a href="submission.html">Submission</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Topics of Interest</h2>
+      <p>We welcome work that:</p>
+      <ul>
+        <li><strong>Advances efficient adaptation</strong> of Speech LLMs for low-resource languages (e.g., PEFT, multilingual transfer, distillation, edge/streaming constraints)</li>
+        <li><strong>Proposes or validates task designs and metrics</strong> beyond WER for ASR, SLU, and speech generation, including calibration and abstention</li>
+        <li><strong>Characterises robustness</strong> under domain shift (accent/dialect, channel/codec/reverberation, spontaneous speech) and compares cascaded vs. end-to-end error propagation</li>
+        <li><strong>Creates or curates LR resources</strong> with rigorous documentation and balanced, slice-aware evaluation splits (incl. lexicon/G2P for unwritten languages)</li>
+        <li><strong>Normalises ethics-by-default reporting</strong> (data/model cards, synthetic-data disclosure, lightweight privacy/safety guardrails)</li>
+      </ul>
+      <p>Submissions that couple methodological innovation with thorough empirical evidence, calibrated uncertainty, and openly released artefacts are particularly encouraged.</p>
+    </section>
+
+    <section>
+      <h2>Diversity and Inclusion</h2>
+      
+      <h3>Contributions to Academic Diversity</h3>
+      <p>SPEAKABLE centers less-resourced languages and dialects. We encourage submissions that release resources/code where possible, provide honest data/model cards, and report slice-aware metrics (accent/dialect, channel, speaker). We explicitly welcome SLU/dialog metrics and speech generation evaluations, not only WER.</p>
+      
+      <h3>Diversifying Representation</h3>
+      <p>We will maintain gender and geographic diversity across organizers, session chairs, and invited speakers, with preference for experts who have not been repeatedly featured as keynotes in recent years.</p>
+      
+      <h3>Diversifying Participation</h3>
+      <p>Our CFP will be distributed via relevant mailing lists, COST ACTION networks such as UniDive, Eneoli, and affinity groups. We will run a mentored review track pairing junior and senior reviewers.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> SPEAKABLE 2026 Workshop. All rights reserved.</p>
+    <p>Co-located with <strong>LREC 2026</strong></p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

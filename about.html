@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About – SPEAKABLE 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="About SPEAKABLE 2026 Workshop" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1><a href="index.html" style="color: inherit; text-decoration: none;">SPEAKABLE 2026</a></h1>
+    <p class="subtitle">Speech Language Models in Low-Resource Settings:<br/>Performance, Evaluation, and Bias Analysis</p>
+    <p class="meta"><strong>Co-located with LREC 2026</strong> • Full-Day Workshop</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="topics.html">Topics</a>
+      <a href="dates.html">Dates</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="organizers.html">Organizers</a>
+      <a href="committee.html">Program Committee</a>
+      <a href="submission.html">Submission</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>About the Workshop</h2>
+      
+      <h3>Why This Workshop, & Why Now</h3>
+      <p>
+        Speech-native language models (Speech LLMs) have substantially broadened the scope of spoken language technology, enabling intent understanding, dialogue management, long-form summarization, and expressive text-to-speech. However, these advances have not translated evenly across languages and speaker communities. In low-resource (LR) settings, researchers and developers confront persistent constraints on data availability, annotation quality, and computational budget. These limitations are further compounded by deployment conditions that differ markedly from laboratory benchmarks, such as channel mismatch, dialectal variation, and spontaneous speech phenomena.
+      </p>
+      
+      <p>
+        Even state-of-the-art multilingual foundation ASR models that look competitive on clean test sets degrade under real-world variability—accents, low-SNR/forensic audio, and channel/microphone mismatch. Whisper shows strong zero-shot multilingual results yet exhibits error spikes on poor-quality or streaming/lecture audio and uneven accuracy across languages/accents; recent audits and robustness benchmarks corroborate these disparities. Ensuring reliable performance across all languages and devices is therefore critical to preserve cultural-linguistic diversity and democratize speech technologies.
+      </p>
+      
+      <p>
+        There is a pressing need for a forum that consolidates practical methodology for LR modeling, such as transfer learning and cross-lingual adaptation, along with evaluation protocols that reflect real-world use and explicitly characterize uncertainty, robustness, and cost.
+      </p>
+      
+      <h3>What SPEAKABLE Brings</h3>
+      <p>SPEAKABLE focuses on three intertwined strands:</p>
+      
+      <p><strong>1. Efficient Adaptation:</strong> Advancing efficient adaptation of Speech LLMs for LR languages through parameter-efficient methods (e.g., adapters, LoRA, prompt/prefix tuning), multilingual transfer and layer selection, knowledge distillation, and streaming or edge-constrained inference. These methods have been shown to significantly reduce the number of trainable parameters while maintaining or improving performance across low-resource speech tasks.</p>
+      
+      <p><strong>2. Meaningful Evaluation:</strong> Moving beyond word error rate to task-appropriate metrics for ASR, SLU, and speech generation, incorporating calibration and reliability analysis, slice-aware reporting by accent, dialect, channel, and speaking style, and principled comparisons between end-to-end and cascaded pipelines with attention to error propagation.</p>
+      
+      <p><strong>3. Responsible Practice:</strong> Treating bias analysis and responsible practice as routine scientific reporting rather than an optional appendix. This includes transparent documentation of data provenance and consent, disclosure of synthetic data use, and minimal guardrails for privacy and safety in speech I/O.</p>
+      
+      <div class="tagline">
+        "Build strong models, measure what matters, and make bias analysis routine for speech in the long tail."
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> SPEAKABLE 2026 Workshop. All rights reserved.</p>
+    <p>Co-located with <strong>LREC 2026</strong></p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

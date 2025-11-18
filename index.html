@@ -5,487 +5,97 @@
   <title>SPEAKABLE 2026 – Speech Language Models in Low-Resource Settings</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="SPEAKABLE 2026: Workshop on Speech Language Models in Low-Resource Settings - Performance, Evaluation, and Bias Analysis. Co-located with LREC 2026." />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fafafa;
-      color: #2d3748;
-      line-height: 1.7;
-    }
-    
-    /* Header with subtle gradient */
-    header {
-      background: linear-gradient(135deg, #1e3a8a 0%, #0891b2 100%);
-      color: #ffffff;
-      padding: 3.5rem 1.5rem 3rem;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    
-    header .subtitle {
-      margin: 1rem auto 0;
-      font-size: 1.15rem;
-      max-width: 800px;
-      opacity: 0.95;
-      font-weight: 400;
-      line-height: 1.6;
-    }
-    
-    header .meta {
-      margin-top: 1.5rem;
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-    
-    header .meta strong {
-      font-weight: 600;
-    }
-    
-    /* Navigation */
-    nav {
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.3);
-    }
-    
-    nav a {
-      color: #ffffff;
-      margin: 0 0.8rem;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: opacity 0.2s;
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
-    }
-    
-    nav a:hover {
-      background: rgba(255,255,255,0.15);
-    }
-    
-    /* Main content */
-    main {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 1.5rem 4rem;
-    }
-    
-    section {
-      background: #ffffff;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
-    
-    h2 {
-      margin-top: 0;
-      font-size: 1.85rem;
-      color: #1e3a8a;
-      font-weight: 700;
-      border-bottom: 3px solid #0891b2;
-      padding-bottom: 0.5rem;
-      display: inline-block;
-    }
-    
-    h3 {
-      font-size: 1.35rem;
-      color: #0891b2;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-    
-    p {
-      margin: 1rem 0;
-    }
-    
-    ul {
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-    }
-    
-    li {
-      margin: 0.5rem 0;
-    }
-    
-    /* Highlight boxes for important dates */
-    .dates-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
-    
-    .date-box {
-      background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
-      border-left: 4px solid #0891b2;
-      padding: 1.25rem;
-      border-radius: 6px;
-    }
-    
-    .date-box strong {
-      display: block;
-      color: #1e3a8a;
-      font-size: 1.05rem;
-      margin-bottom: 0.4rem;
-    }
-    
-    .date-box .date {
-      color: #0891b2;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-    
-    /* Tagline box */
-    .tagline {
-      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-      border-left: 4px solid #f59e0b;
-      padding: 1.5rem;
-      margin: 2rem 0;
-      border-radius: 6px;
-      font-style: italic;
-      font-size: 1.1rem;
-      color: #78350f;
-      text-align: center;
-      font-weight: 500;
-    }
-    
-    /* Organizer cards */
-    .organizer {
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    
-    .organizer:last-child {
-      border-bottom: none;
-    }
-    
-    .organizer-name {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #1e3a8a;
-      margin-bottom: 0.3rem;
-    }
-    
-    .organizer-email {
-      color: #0891b2;
-      font-size: 0.95rem;
-      text-decoration: none;
-      margin-bottom: 0.5rem;
-      display: inline-block;
-    }
-    
-    .organizer-email:hover {
-      text-decoration: underline;
-    }
-    
-    .organizer-bio {
-      margin-top: 0.5rem;
-      color: #4b5563;
-      line-height: 1.6;
-    }
-    
-    /* Speaker section */
-    .speaker-box {
-      background: #f0fdfa;
-      border-left: 4px solid #14b8a6;
-      padding: 1.25rem;
-      margin: 1rem 0;
-      border-radius: 6px;
-    }
-    
-    .speaker-box strong {
-      color: #0f766e;
-    }
-    
-    /* Program committee - compact list */
-    .pc-list {
-      column-count: 2;
-      column-gap: 2rem;
-      list-style: none;
-      padding: 0;
-    }
-    
-    .pc-list li {
-      break-inside: avoid;
-      margin: 0.5rem 0;
-      padding-left: 1.5rem;
-      position: relative;
-    }
-    
-    .pc-list li:before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: #0891b2;
-      font-weight: bold;
-    }
-    
-    /* Links */
-    a {
-      color: #0891b2;
-      text-decoration: none;
-    }
-    
-    a:hover {
-      text-decoration: underline;
-    }
-    
-    /* Footer */
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #6b7280;
-      padding: 2rem 1rem 3rem;
-      background: #f9fafb;
-      border-top: 1px solid #e5e7eb;
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      
-      header .subtitle {
-        font-size: 1rem;
-      }
-      
-      section {
-        padding: 1.5rem;
-      }
-      
-      .pc-list {
-        column-count: 1;
-      }
-      
-      nav a {
-        display: inline-block;
-        margin: 0.3rem 0.4rem;
-      }
-    }
-    
-    /* Smooth scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>SPEAKABLE 2026</h1>
+    <h1><a href="index.html" style="color: inherit; text-decoration: none;">SPEAKABLE 2026</a></h1>
     <p class="subtitle">Speech Language Models in Low-Resource Settings:<br/>Performance, Evaluation, and Bias Analysis</p>
     <p class="meta"><strong>Co-located with LREC 2026</strong> • Full-Day Workshop</p>
     <nav>
-      <a href="#about">About</a>
-      <a href="#topics">Topics</a>
-      <a href="#dates">Dates</a>
-      <a href="#speakers">Speakers</a>
-      <a href="#organizers">Organizers</a>
-      <a href="#pc">Program Committee</a>
-      <a href="#submission">Submission</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="topics.html">Topics</a>
+      <a href="dates.html">Dates</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="organizers.html">Organizers</a>
+      <a href="committee.html">Program Committee</a>
+      <a href="submission.html">Submission</a>
     </nav>
   </header>
 
   <main>
-    <section id="about">
-      <h2>About the Workshop</h2>
-      
-      <h3>Why This Workshop, & Why Now</h3>
-      <p>
-        Speech-native language models (Speech LLMs) have substantially broadened the scope of spoken language technology, enabling intent understanding, dialogue management, long-form summarization, and expressive text-to-speech. However, these advances have not translated evenly across languages and speaker communities. In low-resource (LR) settings, researchers and developers confront persistent constraints on data availability, annotation quality, and computational budget. These limitations are further compounded by deployment conditions that differ markedly from laboratory benchmarks, such as channel mismatch, dialectal variation, and spontaneous speech phenomena.
+    <div class="welcome-box">
+      <h2>Welcome to SPEAKABLE 2026!</h2>
+      <p style="font-size: 1.05rem; line-height: 1.8; margin: 1rem 0;">
+        A full-day workshop on Speech Language Models in Low-Resource Settings, focusing on Performance, Evaluation, and Bias Analysis.
       </p>
-      
+      <div style="margin-top: 1.5rem;">
+        <a href="submission.html" class="cta-button">Submit Your Paper</a>
+        <a href="about.html" class="cta-button">Learn More</a>
+      </div>
+    </div>
+
+    <section>
+      <h2>Quick Overview</h2>
       <p>
-        Even state-of-the-art multilingual foundation ASR models that look competitive on clean test sets degrade under real-world variability—accents, low-SNR/forensic audio, and channel/microphone mismatch. Whisper shows strong zero-shot multilingual results yet exhibits error spikes on poor-quality or streaming/lecture audio and uneven accuracy across languages/accents; recent audits and robustness benchmarks corroborate these disparities. Ensuring reliable performance across all languages and devices is therefore critical to preserve cultural-linguistic diversity and democratize speech technologies.
+        SPEAKABLE 2026 brings together researchers and practitioners working on speech-native language models, with a special focus on low-resource settings. The workshop addresses the persistent constraints on data availability, annotation quality, and computational budget that affect underrepresented languages and speaker communities.
       </p>
-      
-      <p>
-        There is a pressing need for a forum that consolidates practical methodology for LR modeling, such as transfer learning and cross-lingual adaptation, along with evaluation protocols that reflect real-world use and explicitly characterize uncertainty, robustness, and cost.
-      </p>
-      
-      <h3>What SPEAKABLE Brings</h3>
-      <p>SPEAKABLE focuses on three intertwined strands:</p>
-      
-      <p><strong>1. Efficient Adaptation:</strong> Advancing efficient adaptation of Speech LLMs for LR languages through parameter-efficient methods (e.g., adapters, LoRA, prompt/prefix tuning), multilingual transfer and layer selection, knowledge distillation, and streaming or edge-constrained inference. These methods have been shown to significantly reduce the number of trainable parameters while maintaining or improving performance across low-resource speech tasks.</p>
-      
-      <p><strong>2. Meaningful Evaluation:</strong> Moving beyond word error rate to task-appropriate metrics for ASR, SLU, and speech generation, incorporating calibration and reliability analysis, slice-aware reporting by accent, dialect, channel, and speaking style, and principled comparisons between end-to-end and cascaded pipelines with attention to error propagation.</p>
-      
-      <p><strong>3. Responsible Practice:</strong> Treating bias analysis and responsible practice as routine scientific reporting rather than an optional appendix. This includes transparent documentation of data provenance and consent, disclosure of synthetic data use, and minimal guardrails for privacy and safety in speech I/O.</p>
       
       <div class="tagline">
         "Build strong models, measure what matters, and make bias analysis routine for speech in the long tail."
       </div>
     </section>
 
-    <section id="topics">
-      <h2>Topics of Interest</h2>
-      <p>We welcome work that:</p>
-      <ul>
-        <li><strong>Advances efficient adaptation</strong> of Speech LLMs for low-resource languages (e.g., PEFT, multilingual transfer, distillation, edge/streaming constraints)</li>
-        <li><strong>Proposes or validates task designs and metrics</strong> beyond WER for ASR, SLU, and speech generation, including calibration and abstention</li>
-        <li><strong>Characterises robustness</strong> under domain shift (accent/dialect, channel/codec/reverberation, spontaneous speech) and compares cascaded vs. end-to-end error propagation</li>
-        <li><strong>Creates or curates LR resources</strong> with rigorous documentation and balanced, slice-aware evaluation splits (incl. lexicon/G2P for unwritten languages)</li>
-        <li><strong>Normalises ethics-by-default reporting</strong> (data/model cards, synthetic-data disclosure, lightweight privacy/safety guardrails)</li>
-      </ul>
-      <p>Submissions that couple methodological innovation with thorough empirical evidence, calibrated uncertainty, and openly released artefacts are particularly encouraged.</p>
-    </section>
+    <div class="quick-links">
+      <a href="about.html" class="quick-link-card">
+        <h3>📖 About</h3>
+        <p>Learn why this workshop matters and what SPEAKABLE brings to the community</p>
+      </a>
+      
+      <a href="topics.html" class="quick-link-card">
+        <h3>🎯 Topics</h3>
+        <p>Explore the research areas we're interested in and diversity initiatives</p>
+      </a>
+      
+      <a href="dates.html" class="quick-link-card">
+        <h3>📅 Important Dates</h3>
+        <p>Check submission deadlines and workshop schedule</p>
+      </a>
+      
+      <a href="speakers.html" class="quick-link-card">
+        <h3>🎤 Speakers</h3>
+        <p>Meet our confirmed invited speakers</p>
+      </a>
+      
+      <a href="organizers.html" class="quick-link-card">
+        <h3>👥 Organizers</h3>
+        <p>Get to know the organizing committee</p>
+      </a>
+      
+      <a href="committee.html" class="quick-link-card">
+        <h3>🔬 Program Committee</h3>
+        <p>View our expert reviewers from around the world</p>
+      </a>
+      
+      <a href="submission.html" class="quick-link-card">
+        <h3>📝 Submission</h3>
+        <p>Guidelines for paper format and submission process</p>
+      </a>
+    </div>
 
-    <section id="dates">
-      <h2>Important Dates</h2>
-      <div class="dates-grid">
-        <div class="date-box">
-          <strong>Paper Submission</strong>
-          <div class="date">TBD</div>
-        </div>
-        <div class="date-box">
-          <strong>Notification</strong>
-          <div class="date">TBD</div>
-        </div>
-        <div class="date-box">
-          <strong>Camera-Ready</strong>
-          <div class="date">TBD</div>
-        </div>
-        <div class="date-box">
-          <strong>Workshop Date</strong>
-          <div class="date">TBD</div>
-        </div>
+    <section>
+      <h2>Three Core Strands</h2>
+      <div style="margin-top: 1.5rem;">
+        <h3>1. Efficient Adaptation</h3>
+        <p>Parameter-efficient methods, multilingual transfer, knowledge distillation, and edge-constrained inference for low-resource speech tasks.</p>
+        
+        <h3>2. Meaningful Evaluation</h3>
+        <p>Moving beyond WER to task-appropriate metrics, calibration analysis, and slice-aware reporting by accent, dialect, and channel.</p>
+        
+        <h3>3. Responsible Practice</h3>
+        <p>Treating bias analysis as routine scientific reporting, with transparent data documentation and privacy guardrails.</p>
       </div>
-      <p style="margin-top: 1.5rem;"><em>All deadlines are anywhere-on-earth (AoE).</em></p>
-    </section>
-
-    <section id="speakers">
-      <h2>Invited Speakers</h2>
-      <div class="speaker-box">
-        <strong>Jordi Luque</strong> (Confirmed)<br/>
-        Senior Research Scientist, Telefónica Research<br/>
-        <em>Funding support from Eloquence project</em>
-      </div>
-      <p>We are reaching out to ALT-EDIC (LLMs4EU) for additional confirmed speakers.</p>
-    </section>
-
-    <section id="organizers">
-      <h2>Organizers</h2>
-      
-      <div class="organizer">
-        <div class="organizer-name">Nina Hosseini-Kivanani</div>
-        <a href="mailto:nina.hosseinikivanani@uni.lu" class="organizer-email">nina.hosseinikivanani@uni.lu</a>
-        <div class="organizer-bio">
-          Radio Television Luxembourg (RTL) & University of Luxembourg. Nina recently completed her PhD in Computer Science at the University of Luxembourg. Currently, she is a postdoctoral researcher jointly at RTL and the University of Luxembourg, supported by an FNR Industrial Fellowship, where she works on speech recognition and text-to-speech systems for Luxembourgish. Her broader research spans NLP, computer vision, multimodal learning, and AI evaluation, with a strong focus on low-resource and inclusive technologies. She has served as a trainer at COST Action UniDive and has been actively involved in GoodBrother, LITHME, UniDive, including organizing training schools on Speech LLMs and workshops. She organized the TEICAI workshop at EACL 2024 and has volunteered at ACL and Interspeech.
-        </div>
-      </div>
-      
-      <div class="organizer">
-        <div class="organizer-name">Alessio Brutti</div>
-        <a href="mailto:brutti@fbk.eu" class="organizer-email">brutti@fbk.eu</a>
-        <div class="organizer-bio">
-          Fondazione Bruno Kessler, Italy. Alessio is a tenured researcher at FBK, currently leading the SpeechTek research unit of the Centre for Augmented Intelligence. He has collaborations with the University of Bolzano and the University of Padova, where he taught/teaches speech technologies. His research interests focus mainly on the use of machine learning approaches for digital audio and speech processing, including: speech recognition, speaker verification and recognition, speech enhancement, source localization, and sound event detection. He co-organized tasks in Dcase 2022 and 2023.
-        </div>
-      </div>
-      
-      <div class="organizer">
-        <div class="organizer-name">Marco Matassoni</div>
-        <a href="mailto:matasso@fbk.eu" class="organizer-email">matasso@fbk.eu</a>
-        <div class="organizer-bio">
-          Fondazione Bruno Kessler, Italy. Marco graduated in Electronic Engineering at the University of Padua and joined ITC-IRST in 1996, where he has been working in the Speech Recognition Group. Currently, he is a senior researcher of the SpeechTeK group. His main fields of research are speech recognition, speaker identification, speech synthesis, voice conversion, robustness in speech processing, and automated proficiency assessment. He has actively participated in multiple European projects and acts as a reviewer for international journals and conferences; he served in the organizing committees of CHiME 2013 and the 2020 and 2021 Interspeech ASR Challenges for Non-native Children's Speech.
-        </div>
-      </div>
-      
-      <div class="organizer">
-        <div class="organizer-name">Sandipana Dowerah</div>
-        <a href="mailto:sandipana.dowerah@taltech.ee" class="organizer-email">sandipana.dowerah@taltech.ee</a>
-        <div class="organizer-bio">
-          Tallinn University of Technology. Sandipana is a postdoctoral researcher at TalTech's Laboratory of Language Technology, currently working on speech and language foundation models, children's voice privacy, and audio deepfake detection. Previously, she was a postdoctoral researcher at the University of Rennes (IRISA/CNRS), France, focusing on large-scale TTS generation and deepfake detection. She earned her PhD from Inria Nancy, University of Lorraine, France, on DNN-based speaker verification in real-world conditions. Her research interests include deepfake detection, TTS, speaker verification, speech enhancement and voice privacy. She served in the committees for iColsi38, the Himalayan Languages Symposium, the Workshop on Tone and Intonation, and NEILS.
-        </div>
-      </div>
-      
-      <div class="organizer">
-        <div class="organizer-name">Davide Liga</div>
-        <a href="mailto:davide.liga@uni.lu" class="organizer-email">davide.liga@uni.lu</a>
-        <div class="organizer-bio">
-          University of Luxembourg. Davide is a postdoctoral researcher at the University of Luxembourg, currently working for the CLAiM (Computational Law and Machine Ethics) and for the ICR (Individual and Collective Reasoning) groups. His primary research focuses on LLMs (which he has studied since their early emergence in 2018) and the combination of symbolic and sub-symbolic AI, especially in scenarios in which normative elements are decisive. He has organized the 3rd international workshop on Logics for New-Generation AI (LNGAI 2023) and the 1st international workshop on Causality, Agents, and Large Models (CALM 2024). He is currently organizing CALM 2025 and the first international workshop on Normative Reasoning for Agentic AI (NORA).
-        </div>
-      </div>
-      
-      <div class="organizer">
-        <div class="organizer-name">Christoph Schommer</div>
-        <a href="mailto:christoph.schommer@uni.lu" class="organizer-email">christoph.schommer@uni.lu</a>
-        <div class="organizer-bio">
-          University of Luxembourg. Christoph is a computer scientist specializing in AI, with a PhD in medical informatics from JW Goethe University Frankfurt/Main. He has taught more than 190 courses in AI, Data Science, Mathematics, Finance, Philosophy, and Medicine at universities in Luxembourg, Berlin, Potsdam, Tsinghua/Beijing, Singapore, Seville, and Linz. His current teaching portfolio includes Applications of AI, AI for Education, Data Science, and Advanced Data Analytics. He leads the AICafé, AI4Education focus area, and serves as a scientific member of the Centre for Digital Ethics. His research spans AI applications in multidisciplinary contexts.
-        </div>
-      </div>
-    </section>
-
-    <section id="pc">
-      <h2>Program Committee</h2>
-      <p>We have constituted a Program Committee of 20 confirmed active domain experts to ensure that each submission receives at least three reviews while maintaining a modest reviewer workload.</p>
-      <ul class="pc-list">
-        <li><strong>Bornali Phukon</strong>, University of Illinois Urbana Champaign, USA</li>
-        <li><strong>Matt Coler</strong>, University of Groningen, Netherlands</li>
-        <li><strong>Ajinkya Kulkarni</strong>, Idiap Research Institute, Switzerland</li>
-        <li><strong>Badr M. Abdullah</strong>, Saarland University, Germany</li>
-        <li><strong>Pablo Zuluaga</strong>, AGIGO, Switzerland</li>
-        <li><strong>Joonas Kalda</strong>, Pyannote, France</li>
-        <li><strong>Dimitra Anastasiou</strong>, Luxembourg Institute of Science and Technology</li>
-        <li><strong>Rohan Kumar Das</strong>, Fortemedia, Singapore</li>
-        <li><strong>Shammur Absar Chowdhury</strong>, Qatar Computing Research Institute (QCRI)</li>
-        <li><strong>Miguel Couceiro</strong>, Universidade de Lisboa, Portugal</li>
-        <li><strong>Léopold Hillah</strong>, University of Luxembourg</li>
-        <li><strong>Beatrice Savoldi</strong>, FBK, Italy</li>
-        <li><strong>Tanel Alumäe</strong>, Tallinn University of Technology, Estonia</li>
-        <li><strong>Mohamed Nabih Ali</strong>, FBK, Italy</li>
-        <li><strong>Fred Philippy</strong>, SnT, University of Luxembourg</li>
-        <li><strong>Omnia Ibrahim</strong>, Alexandria University, Egypt</li>
-        <li><strong>Peter Gilles</strong>, University of Luxembourg</li>
-        <li><strong>Saeed Farzi</strong>, FBK, Italy</li>
-        <li><strong>Damien Lolive</strong>, IUT of Vannes (Univ of South Brittany), France</li>
-        <li><strong>Nabarun Goswami</strong>, University of Tokyo, Japan</li>
-      </ul>
-    </section>
-
-    <section id="submission">
-      <h2>Submission Guidelines</h2>
-      
-      <h3>Format and Requirements</h3>
-      <p>All submissions must use the official <strong>LREC 2026 Author's Kit</strong> templates. Papers should be <strong>4–8 pages</strong> for the main text, with references, acknowledgements, ethics and limitations, and data/code availability statements excluded from the page limit.</p>
-      
-      <h3>Review Process</h3>
-      <p>We anticipate 20–25 submissions. Each submission will receive at least three reviews from our program committee of domain experts.</p>
-      
-      <h3>Submission Portal</h3>
-      <p>The submission link will be announced here soon.</p>
-      
-      <h3>Expected Attendance</h3>
-      <p>30–40 participants from academia, industry, and community organizations.</p>
-    </section>
-
-    <section id="diversity">
-      <h2>Diversity and Inclusion</h2>
-      
-      <h3>Contributions to Academic Diversity</h3>
-      <p>SPEAKABLE centers less-resourced languages and dialects. We encourage submissions that release resources/code where possible, provide honest data/model cards, and report slice-aware metrics (accent/dialect, channel, speaker). We explicitly welcome SLU/dialog metrics and speech generation evaluations, not only WER.</p>
-      
-      <h3>Diversifying Representation</h3>
-      <p>We will maintain gender and geographic diversity across organizers, session chairs, and invited speakers, with preference for experts who have not been repeatedly featured as keynotes in recent years.</p>
-      
-      <h3>Diversifying Participation</h3>
-      <p>Our CFP will be distributed via relevant mailing lists, COST ACTION networks such as UniDive, Eneoli, and affinity groups. We will run a mentored review track pairing junior and senior reviewers.</p>
     </section>
   </main>
 
