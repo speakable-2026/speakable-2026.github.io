@@ -475,15 +475,6 @@ footer {
     grid-template-columns: 1fr;
   }
   
-  .logos-container {
-    gap: 0.8rem;
-    flex-wrap: nowrap;
-  }
-  
-  .university-logo {
-    height: 28px;
-    max-width: 70px;
-  }
 }
 
 /* University Logos Footer */
@@ -524,6 +515,18 @@ footer {
   opacity: 1;
   transform: scale(1.05);
   filter: grayscale(0%);
+}
+
+/* Responsive logo styles for mobile */
+@media (max-width: 768px) {
+  .logos-container {
+    gap: 0.8rem;
+  }
+  
+  .university-logo {
+    height: 28px;
+    max-width: 70px;
+  }
 }
 
 /* Smooth scroll */
