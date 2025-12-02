@@ -485,26 +485,17 @@ footer {
   text-align: center;
 }
 
-.university-logos h4 {
-  margin: 0 0 1rem 0;
-  font-size: 0.9rem;
-  color: #6b7280;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
 .logos-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: nowrap;
 }
 
 .university-logo {
-  height: 32px;
-  max-width: 90px;
+  height: 45px;
+  max-width: 120px;
   object-fit: contain;
   opacity: 0.8;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -520,12 +511,12 @@ footer {
 /* Responsive logo styles for mobile */
 @media (max-width: 768px) {
   .logos-container {
-    gap: 0.8rem;
+    gap: 1rem;
   }
   
   .university-logo {
-    height: 28px;
-    max-width: 70px;
+    height: 35px;
+    max-width: 90px;
   }
 }
 
