@@ -494,8 +494,8 @@ footer {
 }
 
 .university-logo {
-  height: 90px;
-  max-width: 200px;
+  height: 100px;
+  max-width: 220px;
   object-fit: contain;
   opacity: 0.8;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -515,8 +515,8 @@ footer {
   }
   
   .university-logo {
-    height: 65px;
-    max-width: 150px;
+    height: 70px;
+    max-width: 160px;
   }
 }
 
