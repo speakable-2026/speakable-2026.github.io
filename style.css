@@ -566,6 +566,13 @@ footer {
   margin-top: 0.35rem;
 }
 
+.program-talk-format {
+  display: block;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
 .schedule-content .paper-list.compact {
   margin-top: 0.75rem;
 }
