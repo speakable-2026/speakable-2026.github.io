@@ -361,6 +361,11 @@ li {
   margin-top: 1.25rem;
 }
 
+.keynote-affiliation-lead {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
 .program-keynote-title {
   display: block;
   font-size: 0.95rem;
