@@ -326,32 +326,47 @@ li {
   color: #0f766e;
 }
 
-.keynote-speaker .keynote-block-heading {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  color: #0f766e;
+/* Keynote card gets a bit more room */
+.speaker-box.keynote-speaker {
+  padding: 2rem 2rem 1.75rem;
 }
 
-.keynote-speaker .keynote-block-heading:first-of-type {
-  margin-top: 0;
+.keynote-speaker .keynote-block-heading {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f766e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .keynote-title-line {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #1e3a8a;
-  line-height: 1.45;
-  margin: 0 0 0.25rem 0;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Bio: photo floated right, text wraps around it */
+.keynote-bio-wrap {
+  overflow: hidden; /* clearfix */
 }
 
 .keynote-photo {
-  max-width: 220px;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 0.25rem 0 0;
-  display: block;
+  float: right;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 0 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.keynote-bio-wrap p {
+  margin: 0;
+  line-height: 1.7;
 }
 
 .keynote-affiliation {
@@ -363,7 +378,23 @@ li {
 
 .keynote-affiliation-lead {
   margin-top: 0;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #ccfbf1;
+}
+
+.keynote-affiliation-lead p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 500px) {
+  .keynote-photo {
+    float: none;
+    display: block;
+    margin: 0 auto 1rem;
+  }
 }
 
 .program-keynote-title {
