@@ -349,57 +349,62 @@ li {
   margin: 0;
 }
 
-/* Bio: photo floated right, text wraps around it */
-.keynote-bio-wrap {
-  overflow: hidden; /* clearfix */
-}
-
-.keynote-photo {
-  float: right;
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 0 0 1rem 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-.keynote-bio-wrap p {
-  margin: 0;
-  line-height: 1.7;
-  text-align: justify;
-}
-
-.keynote-speaker .keynote-title-line,
-.keynote-speaker > p {
-  text-align: justify;
-}
-
-.keynote-affiliation {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: #374151;
-  margin-top: 1.25rem;
-}
-
-.keynote-affiliation-lead {
-  margin-top: 0;
+/* Keynote: photo + name side by side at the top */
+.keynote-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid #ccfbf1;
 }
 
-.keynote-affiliation-lead p {
+.keynote-photo {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.keynote-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.keynote-speaker-name {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 1.15rem;
+  color: #0f766e;
+}
+
+.keynote-speaker-role {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.65;
+}
+
+.keynote-body-text {
+  text-align: justify;
+  line-height: 1.75;
+  margin-top: 0.25rem;
+}
+
+.keynote-title-line {
+  text-align: justify;
 }
 
 @media (max-width: 500px) {
+  .keynote-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .keynote-photo {
-    float: none;
-    display: block;
-    margin: 0 auto 1rem;
+    width: 100px;
+    height: 100px;
   }
 }
 
