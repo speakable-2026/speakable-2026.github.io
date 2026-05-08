@@ -361,12 +361,6 @@ li {
   margin-top: 1.25rem;
 }
 
-.keynote-org-logo {
-  max-width: min(100%, 320px);
-  height: auto;
-  margin-top: 0.5rem;
-}
-
 .program-keynote-title {
   display: block;
   font-size: 0.95rem;
