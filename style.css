@@ -367,6 +367,12 @@ li {
 .keynote-bio-wrap p {
   margin: 0;
   line-height: 1.7;
+  text-align: justify;
+}
+
+.keynote-speaker .keynote-title-line,
+.keynote-speaker > p {
+  text-align: justify;
 }
 
 .keynote-affiliation {
